@@ -1,0 +1,30 @@
+System Design Fundamentals
+---------------------------------------
+Content Delivery Network (CDN)
+Caching
+CAP Theorem
+Consistent Hashing
+Database Index
+Database Sharding
+Load Balancing
+Rate Limiting
+Data Replication
+Data Redundancy
+Proxy Server
+Domain Name System (DNS)
+Message Queues
+Horizontal vs Vertical Scaling
+
+================================
+Latency vs Throughput
+ACID Transactions
+SQL vs NoSQL
+Microservices Architecture
+Strong vs Eventual Consistency
+REST vs RPC
+HeartBeat
+Circuit Breaker
+Idempotency
+API Gateway
+Distributed Locking
+Checksum
