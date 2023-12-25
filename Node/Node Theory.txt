@@ -1,0 +1,62 @@
+Node.js: is an open source, cross-platform javascript runtime environment.
+
+1. open source: source code is publicly available for sharing and modification(github)
+2. cross-platform: (operating systems) available for Mac, Windows and Linux. 
+3. javascript runtime environment: provides all the necessary components in order to use 
+		and run the javascript program outside of the browser.
+--------------------------------------------------------------------------------------
+
+ECMAScript: 
+	
+	1993, first browser with UI, Mosaic
+	
+	1994, lead developers of Mosaic founded a company called Netscape
+		and a polished version of Mosaic was released with the name 
+		"Netscape Navigator" (it only supported static pages)
+	
+	1995, Netscape created their own scripting language called JavaScript.
+		(the name JavaScript was only for marketing purpose)
+	
+	1995, Microsoft released their own browser Internet Explorer
+		Microsoft developers reverse-engineered the Netscape Interpreter and 
+		created their own scripting language called JScript
+	
+	Developers have to label the website with "Best viewed in Netscape Navigator"
+		"Best viewed in Internet Explorer"
+		
+	1996, Netscape submitted the JavaScript to an organization called "ECMA Internationals".
+		It is an org which standardizes the information and communication system.
+	
+	ECMA provided a standard specification and a committee for javascript -> "ECMAScript"
+		Specification -> ECMA-262
+		Committee 	  -> TC-39
+----------------------------
+ECMAScript versions: 
+
+	1997: ECMAScript - 1
+	1998: ECMAScript - 2
+	1999: ECMAScript - 3
+	2009: ECMAScript - 5
+	2015: ECMAScript 2015 (ES6)
+	
+==========================================================================================
+
+JavaScript Engine:	it is a program which converts JS code to machine code.
+	Each browser vendor has their own JS engine.
+	
+	Ex:
+		✔ V8 --> Google for Chrome
+		SpiderMonkey -> Mozilla Firefox
+		JavaScriptCore -> Apple for Safari
+		Chakra -> Microsoft for Edge (original)
+				Modern Edge uses V8 engine
+				
+V8 Engine: is written in C++ --> it is great for low level tasks such as
+		file handling, networking, database connection.
+		
+
+Node.js Source Code 
+	deps -> dependencies --> v8(engine), uv(operating system) / libuv, etc...
+	scr  -> (source code / main code) -> C / C++ featuers
+	lib  -> JS library -> js code --> internally communicates with C++ code
+	
