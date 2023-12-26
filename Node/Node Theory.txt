@@ -59,4 +59,30 @@ Node.js Source Code
 	deps -> dependencies --> v8(engine), uv(operating system) / libuv, etc...
 	scr  -> (source code / main code) -> C / C++ featuers
 	lib  -> JS library -> js code --> internally communicates with C++ code
-	
+-------------------------------------------------------------------------------------------
+
+Browser v/s Node:
+
+	Browser: 
+		we interact with the DOM
+		Web plaform API --> Cookies
+		document, windows, etc...
+		
+	Node:
+		we get the access to APIs provided through modules
+		developer can control the environment
+
+Module: is an encapsulated and reusable chunk of code that has its own context(scope)
+In node js, each file is treated as a separate module.
+
+	Type: 
+		1. Local --> by me
+		2. Built-in -> by node
+		3. Third-party -> by some other developer, used by me
+		
+	By default, modules are isolated
+
+#Local Module: the modules which we create and use in our application.
+	--------------------------------------------------------------
+	NOTE: we follow CommonJS module format for import and export
+	--------------------------------------------------------------
