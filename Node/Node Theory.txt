@@ -42,7 +42,7 @@ ECMAScript versions:
 ==========================================================================================
 
 JavaScript Engine:	it is a program which converts JS code to machine code.
-	Each browser vendor has their own JS engine.
+	Each browser vendor has their own JS engine
 	
 	Ex:
 		✔ V8 --> Google for Chrome
@@ -71,9 +71,11 @@ Browser v/s Node:
 	Node:
 		we get the access to APIs provided through modules
 		developer can control the environment
-
+-----------------------------------------------------------------------
 Module: is an encapsulated and reusable chunk of code that has its own context(scope)
 In node js, each file is treated as a separate module.
+
+NOTE: Each module is converted into an IIFE by node.
 
 	Type: 
 		1. Local --> by me
@@ -86,3 +88,78 @@ In node js, each file is treated as a separate module.
 	--------------------------------------------------------------
 	NOTE: we follow CommonJS module format for import and export
 	--------------------------------------------------------------
+	
+Parameters of IIFE by Node --> 
+	exports
+	require
+	module
+	__filename
+	__dirname
+	
+--------------------------------------------------------------------------
+
+module.export vs exports
+------------------------
+let obj1 = {
+  name: "John",
+};
+
+let obj2 = obj1;
+
+obj2.name = "Jack";
+
+console.log("obj1", obj1);
+
+// works same as module.exports
+// --------------------- same reference --------------------
+
+let object1 = {
+  name: "John",
+};
+
+let object2 = object1; // reference established
+
+// object2 is assigned to an object literal  ---> reference broke
+object2 = {
+  name: "Jack",
+};
+
+console.log("object1", object1);
+
+// works same as exports
+
+
+======================================================
+
+ES Modules: 
+
+Is a standard module format given for ECMAScript
+
+Was introduced in ES2015 (ES6)
+
+Node v.14 and above 
+
+The file extension should be .mjs
+
+"export" keyword is used instead of "module.exports"
+
+We can export in 2 ways -> 1. default export, 2. named export
+
+While using default export --> we can use any name while importing
+
+But while using named export --> we have to give same name while importing
+
+----------------------------------------------------------------------
+Watch Mode --> node --watch filename
+	continuously watch for changes in the file and execute it
+----------------------------------------------------------------------
+
+Build-in modules: 
+	Provided by node 
+	while importing we have to specify node before module name("node:module-name")
+	ex of built-in modules:
+		fs, path, event, http, etc...
+--------------------------------------------------------------------
+HTTP module: (Express.js is built on the top of http module)
+	
+	
