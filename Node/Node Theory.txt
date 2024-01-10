@@ -175,3 +175,33 @@ Creating server:
 	  console.log("Server listening on port 3000");
 	});
 ----------------------------------------------------------
+npm -> node package manager --> 
+
+npm registry ---> 
+
+package.json --> Keeps track of the dependencies we need in the development(concise)
+package-lock.json --> Keeps track of all the dependencies which are required for
+	the dependencies we need(elaborative)
+
+	JSON -> JavaScript Object Notation
+	
+	{
+		key1: value1,
+		key2: value2,
+		...
+	}
+	
+	[{
+		"firstName": "Aman",
+		"lastName": "Kamble",
+		"age": 16,
+		"address": {
+			"city": "Amravati",
+			"state": "Maharashtra"
+		}
+		...
+	},
+	{},
+	{}
+	]
+	
