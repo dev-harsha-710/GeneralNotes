@@ -205,3 +205,45 @@ package-lock.json --> Keeps track of all the dependencies which are required for
 	{}
 	]
 	
+=====================================================================================
+ROUTING:
+----------------------------------------------------------------
+// server
+
+const http = require("node:http");
+const fs = require("node:fs");
+
+const obj = {
+  firstName: "Aman",
+  lastName: "Kamble",
+  age: 16,
+  addresponses: {
+    city: "Amravati",
+    state: "Maharashtra",
+  },
+};
+
+const server = http.createServer((request, response) => {
+  const url = request.url;
+  if (url === "/home") {
+    response.writeHead(200);
+    fs.createReadStream("./home.html").pipe(response);
+  } else if (url === "/about") {
+    response.writeHead(200);
+    fs.createReadStream("./about.html").pipe(response);
+  } else if (url === "/api") {
+    response.writeHead(200);
+    response.end(JSON.stringify(obj));
+  } else {
+    response.writeHead(404);
+    fs.createReadStream("./pageNotFound.html").pipe(response);
+  }
+});
+
+const port = process.env.PORT || 4000;
+
+server.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+});
+
+==================================================================================
