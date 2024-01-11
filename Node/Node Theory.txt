@@ -247,3 +247,65 @@ server.listen(port, () => {
 });
 
 ==================================================================================
+
+JavaScript: is a synchronous, blocking and single-threaded programming language.
+
+synchronous: one line at a time
+blocking: waits for the current statement to execute, does not move to the next line till the current statement is executed.
+single-threaded: all task will be performed on a single(main) thread only
+
+libuv: library written in C language which is open source and cross-platform.
+
+ex:
+	let a = 10 + 20; ------- 1ms
+	for(let i=1; i<=1000000000000000; i++){ ------------------- 1000000000000000ms
+		console.log(i);
+	}
+	console.log("After the loop"); ------------- 1ms
+	
+	1 thread -> main thread -> all task will be performed in the main thread only
+	
+	
+IMP: libuv handles all the async non-blocking operations & it also deals with the OS
+
+IMPORTANT FEATURES OF libuv: 
+1. Thread pool
+2. Event loop
+
+#1. Thread pool:
+----------------
+libuv has a bunch of threads which main thread delegates tasks to so that main thread can be free.
+
+Example: 
+
+// CPU intensive process
+// "password123" --> "password123" salt="xyz" "pasxyzswoxyzrd1xyz23" with salt -->
+// hashing algorithm -->RSA , SHA -> 74hifgkhsfg78345wicr7twge7cmyergtoqw498h
+-----------------------------------------------------------------
+
+FOR SYNCHRONOUS:
+
+const crypto = require("node:crypto");
+
+const start = Date.now();
+
+crypto.pbkdf2Sync("password", "salt", 100000, 512, "sha512");
+crypto.pbkdf2Sync("password", "salt", 100000, 512, "sha512");
+crypto.pbkdf2Sync("password", "salt", 100000, 512, "sha512");
+crypto.pbkdf2Sync("password", "salt", 100000, 512, "sha512");
+
+console.log(Date.now() - start,"ms");
+-----------------------------------------------------------------
+
+FOR ASYNCHRONOUS: 
+
+const crypto = require("node:crypto");
+const MAX_CALLS = 4;
+const start = Date.now();
+
+for (let i = 0; i < MAX_CALLS; i++) {
+  crypto.pbkdf2("password", "salt", 100000, 512, "sha512", () => {
+    console.log(`Hash ${i + 1}`, Date.now() - start);
+  });
+}
+-----------------------------------------------------------------
