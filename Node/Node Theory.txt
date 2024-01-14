@@ -309,3 +309,15 @@ for (let i = 0; i < MAX_CALLS; i++) {
   });
 }
 -----------------------------------------------------------------
+
+libuv has 4 threads by default, but we can increase the threadpool size by overriding(changing) the environment variable.
+BUT -> the no of threads are dependent on the no of cores of the CPU.
+	process.env.UV_THREADPOOL_SIZE = n
+	
+libuv has its own native async manager -> (less load / network call)
+----------------------------------------------------------------------------
+
+EVENT LOOP: part of libuv and is written in C language
+
+It is a design pattern which orchestrates and coordinates the execution of sync and async code of Node.js
+
