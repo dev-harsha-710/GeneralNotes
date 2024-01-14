@@ -1,0 +1,127 @@
+BASICS
+----------
+1. variables
+2. data type
+3. operators
+4. statements
+5. functions
+6. oops
+7. collection framework
+8. multithreading
+9. java8
+------------------------------------------
+Java is strictly/static typed language.
+------------------------------------------
+Memory-> 
+	[Temporary/Volatile]RAM(Random Access Memory) 
+		Heap Memory  -> variables, objects, function declaration
+		Stack Memory -> function calls
+		
+	[Permannt]ROM(Read Only Memory)
+
+
+#1. Variables: 
+--------------
+The name given to a memory location where we can store data.
+
+#2. Data type: 
+--------------
+The type of value/data we are going to store in the variable.
+	
+	Types:
+		1. Primitive	2. Non-primitive
+		--------------------------------
+	1. Primitive:
+		8 data types:
+		
+		Name 		size(bytes)		size(bits)		range
+		-----------------------------------------------------
+		byte 		1				8				
+		short		2				16 
+		int 		4				32
+		long 		8				64
+		float 		4				32
+		double 		8				64
+		char 		1				8
+		boolean 	1				8(1 bit required)
+		
+		byte num1 = 0;  00000000 --> binary
+		byte num2 = 1;	00000001  
+		byte num3 = 15;  00000010 
+		
+		short num5 = 2; - - - - - - - - - - - - - - 0 
+		
+		
+		Range formulae -> -2^(n-1)  to  [2^(n-1)]-1, where n = size in bits
+		
+		byte range -> n= 8 bits  ====> -128 to 127
+		for negetive value = -2^(8-1) = -2^(7) = -128
+		for positive value = [2^(8-1)]-1 = 128 -1 = 127
+		
+		-------------------------------------------------------------
+		
+		2. Non-primitive:
+		-----------------
+		
+		Array -> int[] ar = new int[10]; // empty array where 10 values can be stored
+				 int[] ar1 = {1,2,3,4,5};
+		
+		Array is fixed sized collection of homogenous elements. (static array)
+		
+		dynamic array -> ArrayList<Fetch> generics
+		
+		class Fetch{
+			List
+			Date
+		}
+	-------------------------------------------------------------------
+	#3. Operators:
+	The symbols which are used to perform operation on the operands/values.
+	
+	Types:
+		1. Unary --> on single operand 
+		2. Binary -> on two operands
+		3. Ternary -> replacement to simple if-else statement.
+		
+		
+		#1. Unary --> ++(increment) --(decrement)
+			pre-increment(++a) and post-increment(a++)
+			pre-decrement(--a) and post-decrement(a--)
+			
+			int a = 10;
+			// increment statement
+			System.out.println(a++); // 10
+			System.out.println(a);   // 11
+			// print statment
+			
+			a = 10;
+			// increment statement
+			System.out.println(++a);   // 11
+			System.out.println(a++);   // 11
+			// print statment
+
+		#2. Binary operator: 
+			Types: 
+				1. Arithmetic (number)
+					- which performs maths operation and returns a number
+					(+ - * / %)
+					
+				2. Assignment (void)
+					- to store the value on RHS to variable on LHS
+					int a = 10 (+= -= *= /= %=)
+					a += 10;// a = a + 10;
+					Sysout(a); // 20
+					
+				3. Relational / Comparison (boolean)
+					- to compare 2 values
+					(< > <= >= == !=)
+					
+				4. Logical (boolean)
+					- to decide something
+					- often used with multiple conditions
+					&&(returns true if all are true) 
+					||(returns true if any one is true) 
+					! (to find negation)  --> true -> false
+					
+					boolean hasMoney --> logic to find money
+					if(!hasMoney)
